@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Meat</groupId>
+  <artifactId>meat</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>MeatApp</name>
+  <repositories>
+		<repository>
+			<id>jcenter-release</id>
+			<name>jcenter</name>
+			<url>http://oss.jfrog.org/artifactory/oss-release-local/</url>
+		</repository>
+	</repositories>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.2.6.RELEASE</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-ws</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mangofactory</groupId>
+			<artifactId>swagger-springmvc</artifactId>
+			<version>0.9.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.ajar</groupId>
+			<artifactId>swagger-spring-mvc-ui</artifactId>
+			<version>0.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+         <dependency>
+	       <groupId>redis.clients</groupId>
+	         <artifactId>jedis</artifactId>
+	          <version>2.7.3</version>
+          </dependency>
+         <dependency>
+	<groupId>com.sun.mail</groupId>
+	<artifactId>javax.mail</artifactId>
+	<version>1.5.4</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework.data</groupId>
+	<artifactId>spring-data-redis</artifactId>
+	<version>1.6.0.RELEASE</version>
+</dependency>
+
+         
+		<dependency>
+			<groupId>com.google.http-client</groupId>
+			<artifactId>google-http-client-jackson</artifactId>
+			<version>1.20.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-sns</artifactId>
+			<version>1.10.20</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+			<version>2.0.2.RELEASE</version>
+		</dependency>
+		<dependency>
+	<groupId>org.springframework.ldap</groupId>
+	<artifactId>spring-ldap-core</artifactId>
+	<version>2.0.4.RELEASE</version>
+</dependency>
+		
+		<dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>1.3.156</version>
+    </dependency>
+	</dependencies>
+  
+</project>
