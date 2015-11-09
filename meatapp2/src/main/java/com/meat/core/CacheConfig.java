@@ -2,7 +2,10 @@ package com.meat.core;
 
 
 
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.data.redis.cache.RedisCache;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -45,7 +49,15 @@ public class CacheConfig {
  
  @Bean
  CacheManager cacheManager() {
-     return new RedisCacheManager(redisTemplate());
+	 String CACHE_NAME = "otp";
+	 RedisTemplate< Object, Object> redisTemplate = redisTemplate();
+ 	 RedisCache redisCache = new RedisCache(CACHE_NAME, CACHE_NAME.concat(":").getBytes(), redisTemplate(), TimeUnit.SECONDS.toSeconds(60));
+     return new RedisCacheManager(redisTemplate);
+ }
+
+ @Bean
+ Cache cache(){
+	 return cacheManager().getCache("otp");
  }
  
 }
